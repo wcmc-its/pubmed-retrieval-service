@@ -1,9 +1,5 @@
 package model
 
-import (
-
-)
-
 type PubmedArticleSet struct {
 	PubmedArticles []PubmedArticle `xml:"PubmedArticle"`
 }

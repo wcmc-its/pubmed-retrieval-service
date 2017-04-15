@@ -1,6 +1,0 @@
-package xmlparser
-
-import (
-
-)
-
