@@ -5,7 +5,7 @@ import (
 	"net/http"
 	"fmt"
 	"io/ioutil"
-	"model"
+	"github.com/wcmc-its/pubmed-retrieval-service/model"
 )
 
 func Retrieve(url string) {
@@ -15,7 +15,7 @@ func Retrieve(url string) {
 	}
 	defer resp.Body.Close()
 	body, err := ioutil.ReadAll(resp.Body)
-	var pubmedarticles PubmedArticleSet
+	var pubmedarticles model.PubmedArticleSet
 	xml.Unmarshal(body, pubmedarticles)
 	fmt.Println(pubmedarticles)
 }
