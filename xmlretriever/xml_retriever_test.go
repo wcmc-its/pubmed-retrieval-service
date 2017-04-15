@@ -30,7 +30,7 @@ var esearchResultXml = []byte(`
 </eSearchResult>
 `)
 
-func TestESearchRetrieve(t *testing.T) {
+func TestParseEsearch(t *testing.T) {
 	var esearchResult model.ESearchResult = parseEsearch(esearchResultXml)
     if esearchResult.Count != 72 {
         t.Error("Expected 72, got ", esearchResult.Count)
