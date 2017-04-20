@@ -4,6 +4,7 @@ import (
 	"testing"
 
     "github.com/wcmc-its/pubmed-retrieval-service/model"
+    "github.com/wcmc-its/pubmed-retrieval-service/querybuilder"
 )
 
 var esearchResultXml = []byte(`
@@ -38,4 +39,10 @@ func TestParseEsearch(t *testing.T) {
     if esearchResult.WebEnv != "NCID_1_170191730_130.14.22.215_9001_1492267750_1234158498_0MetA0_S_MegaStore_F_1" {
         t.Error("Expected NCID_1_170191730_130.14.22.215_9001_1492267750_1234158498_0MetA0_S_MegaStore_F_1, got ", esearchResult.WebEnv)
     }
+}
+
+func TestParseEfetch(t *testing.T) {
+    var esearchResult model.ESearchResult = EsearchRetrieve(querybuilder.BuildESearchQuery("kukafka"))
+    var efetchurl string = querybuilder.BuildEFetchQuery(esearchResult.WebEnv, 0)
+    EfetchRetrieve(efetchurl)
 }

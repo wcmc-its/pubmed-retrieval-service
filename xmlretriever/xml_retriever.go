@@ -15,25 +15,30 @@ func parseEsearch(bytes []byte) model.ESearchResult {
 	return esearchResult
 }
 
-func ESearchRetrieve(url string) {
+func EsearchRetrieve(url string) model.ESearchResult {
 	resp, err := http.Get(url)
 	if err != nil {
 		fmt.Println("err occurred while retrieving " + url)
 	}
 	defer resp.Body.Close()
-	body, err := ioutil.ReadAll(resp.Body)
-	parseEsearch(body)
+	body, _ := ioutil.ReadAll(resp.Body)
+	return parseEsearch(body)
 }
 
-func Retrieve(url string) {
+func parseEfetch(bytes[] byte) model.PubmedArticleSet {
+	var pubmedArticleSet model.PubmedArticleSet
+	xml.Unmarshal(bytes, &pubmedArticleSet)
+	fmt.Println(pubmedArticleSet)
+	return pubmedArticleSet
+}
+
+func EfetchRetrieve(url string) {
 	resp, err := http.Get(url)
 	if err != nil {
 		fmt.Println("err occurred while retrieving " + url)
 	}
 	fmt.Println("hello")
 	defer resp.Body.Close()
-	body, err := ioutil.ReadAll(resp.Body)
-	var pubmedarticles model.PubmedArticleSet
-	xml.Unmarshal(body, &pubmedarticles)
-	fmt.Println(pubmedarticles)
+	body, _ := ioutil.ReadAll(resp.Body)
+	parseEfetch(body)
 }

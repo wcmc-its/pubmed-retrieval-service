@@ -21,7 +21,7 @@ func BuildESearchQuery(term string) string {
 
 const efetchBaseUrl string = "https://www.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi"
 
-func BuildEFetchQuery(term string, retstart int, webenv string) string {
+func BuildEFetchQuery(webenv string, retstart int) string {
 	return efetchBaseUrl +
 		"?db=" + db +
 		"&retstart=" + strconv.Itoa(retstart) +
