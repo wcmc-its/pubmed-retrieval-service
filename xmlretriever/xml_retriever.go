@@ -31,7 +31,7 @@ func EsearchRetrieve(rawUrl string) model.ESearchResult {
  *
  *
  */
-func EfetchRetrieve(rawUrl string) {
+func EfetchRetrieve(rawUrl string) model.PubmedArticleSet {
 	resp, err := http.Get(rawUrl)
 	fmt.Println("efetch query=" + rawUrl)
 	if err != nil {
@@ -39,7 +39,7 @@ func EfetchRetrieve(rawUrl string) {
 	}
 	defer resp.Body.Close()
 	body, _ := ioutil.ReadAll(resp.Body)
-	parseEfetch(body)
+	return parseEfetch(body)
 }
 
 /**
