@@ -13,13 +13,14 @@ func main() {
 	router = gin.Default()
 	v1 := router.Group("api/v1")
 	{
-		v1.GET("/article/", GetArticle)
+		v1.GET("/articles/:term", GetArticles)
 	}
-	router.Run(":8080")
+	router.Run(":5000")
 }
 
-func GetArticle(c *gin.Context) {
-	var esearchResult model.ESearchResult = xmlretriever.EsearchRetrieve(querybuilder.BuildESearchQuery("bales michael"))
+func GetArticles(c *gin.Context) {
+	term := c.Params.ByName("term")
+	var esearchResult model.ESearchResult = xmlretriever.EsearchRetrieve(querybuilder.BuildESearchQuery(term))
     var efetchurl string = querybuilder.BuildEFetchQuery(esearchResult.WebEnv, 0)
     var result model.PubmedArticleSet = xmlretriever.EfetchRetrieve(efetchurl)
 	c.JSON(200, result)
