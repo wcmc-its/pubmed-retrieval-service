@@ -1,0 +1,15 @@
+
+mode: atomic
+github.com/wcmc-its/pubmed-retrieval-service/querybuilder/pubmed_query_builder.go:14.44,21.2 1 1
+github.com/wcmc-its/pubmed-retrieval-service/querybuilder/pubmed_query_builder.go:25.59,33.2 1 1
+mode: atomic
+github.com/wcmc-its/pubmed-retrieval-service/xmlretriever/xml_retriever.go:18.57,21.16 3 1
+github.com/wcmc-its/pubmed-retrieval-service/xmlretriever/xml_retriever.go:24.2,26.27 3 1
+github.com/wcmc-its/pubmed-retrieval-service/xmlretriever/xml_retriever.go:21.16,23.3 1 0
+github.com/wcmc-its/pubmed-retrieval-service/xmlretriever/xml_retriever.go:34.36,37.16 3 1
+github.com/wcmc-its/pubmed-retrieval-service/xmlretriever/xml_retriever.go:40.2,42.19 3 1
+github.com/wcmc-its/pubmed-retrieval-service/xmlretriever/xml_retriever.go:37.16,39.3 1 0
+github.com/wcmc-its/pubmed-retrieval-service/xmlretriever/xml_retriever.go:48.53,52.2 3 2
+github.com/wcmc-its/pubmed-retrieval-service/xmlretriever/xml_retriever.go:57.55,60.58 3 1
+github.com/wcmc-its/pubmed-retrieval-service/xmlretriever/xml_retriever.go:64.2,64.25 1 1
+github.com/wcmc-its/pubmed-retrieval-service/xmlretriever/xml_retriever.go:60.58,62.8 2 1
