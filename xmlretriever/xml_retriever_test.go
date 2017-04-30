@@ -42,7 +42,7 @@ func TestParseEsearch(t *testing.T) {
 }
 
 func TestParseEfetch(t *testing.T) {
-    var esearchResult model.ESearchResult = EsearchRetrieve(querybuilder.BuildESearchQuery("kukafka"))
+    var esearchResult model.ESearchResult = EsearchRetrieve(querybuilder.BuildESearchQuery("bales michael"))
     var efetchurl string = querybuilder.BuildEFetchQuery(esearchResult.WebEnv, 0)
     EfetchRetrieve(efetchurl)
 }
