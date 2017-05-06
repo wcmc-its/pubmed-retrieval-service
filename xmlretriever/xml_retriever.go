@@ -15,11 +15,11 @@ import (
  * @param url string used to query PubMed for ESearch
  * @return an ESearchResult object
  */
-func EsearchRetrieve(esapcedUrl string) model.ESearchResult {
-	resp, err := http.Get(esapcedUrl)
-	fmt.Println("esearch query=" + esapcedUrl)
+func EsearchRetrieve(url string) model.ESearchResult {
+	resp, err := http.Get(url)
+	fmt.Println("esearch query=" + url)
 	if err != nil {
-		fmt.Println("err occurred while retrieving " + esapcedUrl)
+		fmt.Println("err occurred while retrieving " + url)
 	}
 	defer resp.Body.Close()
 	body, _ := ioutil.ReadAll(resp.Body)
@@ -27,13 +27,13 @@ func EsearchRetrieve(esapcedUrl string) model.ESearchResult {
 }
 
 /**
- * Given an url as a string, perofrm an EFetch on PubMed.
+ * Given an url as a string, perform an EFetch on PubMed.
  */
-func EfetchRetrieve(esapcedUrl string) model.PubmedArticleSet {
-	resp, err := http.Get(esapcedUrl)
-	fmt.Println("efetch query=" + esapcedUrl)
+func EfetchRetrieve(url string) model.PubmedArticleSet {
+	resp, err := http.Get(url)
+	fmt.Println("efetch query=" + url)
 	if err != nil {
-		fmt.Println("err occurred while retrieving " + esapcedUrl)
+		fmt.Println("err occurred while retrieving " + url)
 	}
 	defer resp.Body.Close()
 	body, _ := ioutil.ReadAll(resp.Body)

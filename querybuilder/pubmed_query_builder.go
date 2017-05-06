@@ -2,7 +2,7 @@ package querybuilder
 
 import (
 	"strconv"
-	// "net/url"
+	"net/url"
 )
 
 const esearchBaseUrl string = "https://www.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi"
@@ -16,8 +16,8 @@ func BuildESearchQuery(term string) string {
 		"?db=" + db +
 		"&retmax=" + strconv.Itoa(retmax) +
 		"&usehistory=" + usehistory +
-		// "&term=" + url.QueryEscape(term) +
-		"&term=" + term +
+		"&term=" + url.QueryEscape(term) +
+		// "&term=" + term +
 		"&retmode=" + retmode
 }
 
