@@ -55,9 +55,9 @@ func parseEsearch(bytes []byte) model.ESearchResult {
 func parseEfetch(bytes[] byte) model.PubmedArticleSet {
 	var pubmedArticleSet model.PubmedArticleSet
 	xml.Unmarshal(bytes, &pubmedArticleSet)
-	for _, element := range pubmedArticleSet.PubmedArticles {
-		fmt.Printf("%+v\n", element)
-		break
-	}
+	// for _, element := range pubmedArticleSet.PubmedArticles {
+	// 	fmt.Printf("%+v\n", element)
+	// 	break
+	// }
 	return pubmedArticleSet
 }
